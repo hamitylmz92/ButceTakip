@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" 
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" 
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" 
+             mc:Ignorable="d"
+             x:Class="ButceTakip.Views.Default" Title="Anasayfa" BackgroundColor="LightSteelBlue">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="btnHizliGelirEkle" Text="Hızlı Gelir" Order="Primary" Priority="0" Clicked="btnGelir_Clicked" IconImageSource="GelirlerIcon.png"/>
+        <ToolbarItem x:Name="btnHizliGiderEkle" Text="Hızlı Gider " Order="Primary" Priority="0" Clicked="btnGider_Clicked"  IconImageSource="GiderlerIcon.png"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content >
+            <Grid BackgroundColor="White">
+      
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Frame Grid.ColumnSpan="2" Grid.RowSpan="5" Margin="5,5,5,0" HasShadow="True" BackgroundColor="Azure"></Frame>
+            <inputLayout:SfTextInputLayout  
+                               OutlineCornerRadius="5"  HelperText="Başlangıç Tarihi Seçiniz" FocusedColor="SkyBlue" 
+                               InputViewPadding="1"  ContainerType="None" Margin="10,0,10,5" 
+                               Grid.Column="0" Grid.Row="0" >
+                <DatePicker x:Name="dtIlk" FontSize="Medium" DateSelected="dt_Selected"/>
+            </inputLayout:SfTextInputLayout>
+            <inputLayout:SfTextInputLayout Margin="10,0,10,5" 
+                               ContainerType="None" FocusedColor="SkyBlue" 
+                               InputViewPadding="1" HorizontalOptions="Center"
+                                HelperText="Bitiş Tarihi Seçiniz"
+                               Grid.Column="1" Grid.Row="0" >
+                <DatePicker x:Name="dtSon" DateSelected="dt_Selected" />
+            </inputLayout:SfTextInputLayout>
+            
+               
+                <Label  Text="Net" TextColor="DeepSkyBlue" LineBreakMode="TailTruncation" FontSize="Large" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Center" />
+                <Label x:Name="txtGenel" TextColor="DeepSkyBlue" FontSize="30"  Text="0,00 ₺"  Grid.Row="2" Grid.ColumnSpan="2" HorizontalOptions="Center" />
+                
+                <Label  Text="Gelirlerim" TextColor="ForestGreen" FontSize="20" Grid.Row="3" Grid.Column="0" HorizontalOptions="Center" />
+                <Label  Text="Giderlerim" TextColor="DarkRed" FontSize="20" Grid.Row="3"  Grid.Column="1" HorizontalOptions="Center" />
+                <Label x:Name="txtGelir" TextColor="ForestGreen" FontSize="15"  Text="0,00 ₺" Grid.Row="4" Grid.Column="0" HorizontalOptions="Center" />
+                <Label x:Name="txtGider" TextColor="DarkRed" FontSize="15"   Text="0,00 ₺" Grid.Row="4" Grid.Column="1" HorizontalOptions="Center" />
+
+
+
+
+            <syncfusion:SfListView x:Name="lstGenel"  BackgroundColor="Transparent"  Grid.ColumnSpan="2" Grid.Row="6"
+                ItemSize="49" ItemSpacing="3,3,3,0" SelectionMode="None">
+                    <syncfusion:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            
+                            <Frame x:Name="frame" CornerRadius="15"  Padding="1" Margin="1" HasShadow="True" BackgroundColor="White">
+                                
+                                <Grid >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="110"/>
+                                        <ColumnDefinition Width="2*"/>
+                                       
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="20"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Image 
+                                         Margin="10,10,10,10"  Grid.RowSpan="2"  Grid.Column="0" Grid.Row="0" VerticalOptions="Center"
+                                         Source="{Binding Resim}">
+
+                                    </Image>
+                                    <Label Text="{Binding KategoriAdi}" TextColor="{Binding Renk}" FontSize="Small" Padding="0,0,0,0" Grid.RowSpan="2"  Grid.Column="1" Grid.Row="0" VerticalOptions="Center" />
+                                    <Label Text="{Binding Aciklama}"  FontSize="Micro"  Margin="0,5,0,0"  Grid.Column="2" Grid.Row="0"  />
+                                    <Label Text="{Binding KayitTarihiStr}"  FontSize="Micro"  Margin="0,0,0,5"   Grid.Column="2" Grid.Row="1"  />
+                                    <Label Text="{Binding Deger,StringFormat='{0:c}'}"  FontSize="Large" Padding="0,0,0,0" Grid.RowSpan="2" Grid.Column="3" Grid.Row="0" VerticalOptions="Center"/>
+                                   
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </syncfusion:SfListView.ItemTemplate>
+                </syncfusion:SfListView>
+            
+            </Grid>
+         
+      
+    </ContentPage.Content>
+</ContentPage>

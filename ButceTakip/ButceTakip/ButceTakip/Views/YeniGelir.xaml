@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms" xmlns:numericBox="clr-namespace:Syncfusion.SfNumericTextBox.XForms;assembly=Syncfusion.SfNumericTextBox.XForms"
+             mc:Ignorable="d"
+             x:Class="ButceTakip.Views.YeniGelir" Title="Yeni Gelir">
+    <ContentPage.ToolbarItems >
+        <ToolbarItem x:Name="brBtnVazgec"  Text="Vazgeç" Priority="0"  IconImageSource="delete.png" Clicked="brBtnVazgec_Clicked" />
+        <ToolbarItem x:Name="brBtnKaydet" Text="Kaydet" Priority="1"  IconImageSource="checked.png" Clicked="brBtnKaydet_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Margin="20,20,20,20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <combobox:SfComboBox Watermark="Kategori Seçiniz" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="1"
+                                 x:Name="cmbKategori" SelectedValuePath="Id" AllowFiltering="True" SuggestionMode="Contains"
+                                 HighlightedTextColor="Red" IsEditableMode="False"
+                                 HighlightedTextFontAttributes="Bold"
+                                 MaximumDropDownHeight="150"
+                                 DisplayMemberPath="KategoriAdi" HeightRequest="40" 
+                                 SelectionChanged="cmbKategori_SelectionChanged" />
+                
+                <inputLayout:SfTextInputLayout
+                    Grid.Row="1" Grid.Column="1"
+                    Hint="Açıklama" 
+                    ContainerType="Outlined"
+                    OutlineCornerRadius="8">
+                    <Entry x:Name="txtAciklama"  />
+                </inputLayout:SfTextInputLayout>
+                
+                <inputLayout:SfTextInputLayout
+                     Grid.Row="2" Grid.Column="1"
+                    ContainerType="Outlined"
+                    OutlineCornerRadius="8"
+                    Hint="Gelir">
+                    <numericBox:SfNumericTextBox  x:Name="txtGelir"
+                        Value="0"
+                        FormatString="c" />
+                </inputLayout:SfTextInputLayout>
+                
+                <inputLayout:SfTextInputLayout 
+                               ContainerType="None" 
+                               Grid.Row="3" Grid.Column="1"
+                               HelperText="Kayıt Tarihi">
+                    <DatePicker x:Name="dtKayitTarihi"/>
+                </inputLayout:SfTextInputLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             mc:Ignorable="d"
+             x:Class="ButceTakip.Views.YeniKategori" Title="Yeni Kategori">
+    <ContentPage.ToolbarItems >
+        <ToolbarItem x:Name="brBtnVazgec" Text="Vazgeç" Priority="0"  IconImageSource="delete.png" Clicked="brBtnVazgec_Clicked" />
+        <ToolbarItem x:Name="brBtnKaydet" Text="Kaydet" Priority="1"  IconImageSource="checked.png" Clicked="brBtnKaydet_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Margin="20,20,20,20">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <inputLayout:SfTextInputLayout
+                    Grid.Row="0" Grid.Column="1"
+                    Hint="Kategori Adı" 
+                    ContainerType="Outlined"
+                    OutlineCornerRadius="8">
+                    <Entry x:Name="txtKategoriAdi"  />
+                </inputLayout:SfTextInputLayout>
+                
+                <inputLayout:SfTextInputLayout
+                    Grid.Row="1" Grid.Column="1"
+                    Hint="Kategori Açıklama"
+                    ContainerType="Outlined"
+                    OutlineCornerRadius="8">
+                    <Entry x:Name="txtAciklama"   />
+                </inputLayout:SfTextInputLayout>
+
+                <syncfusion:SfRadioGroup Orientation="Horizontal" Grid.Row="2"  Grid.Column="1">
+                    <syncfusion:SfRadioButton x:Name="rbtnGelir" IsChecked="True" Text="Gelir" />
+                    <syncfusion:SfRadioButton x:Name="rbtnGider" Text="Gider" />
+                </syncfusion:SfRadioGroup>
+                
+                <inputLayout:SfTextInputLayout 
+                               ContainerType="None" 
+                               Grid.Row="3" Grid.Column="1"
+                               HelperText="Kayıt Tarihi">
+                    <DatePicker x:Name="dtKayitTarihi"/>
+                </inputLayout:SfTextInputLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ButceTakip.Views.Home" BackgroundColor="SteelBlue" Title="Bütçe Takibi">
+    <ContentPage.Content>
+        
+        <StackLayout Margin="10,10,10,10" >
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"></RowDefinition>
+                    <RowDefinition Height="100"></RowDefinition>
+                    <RowDefinition Height="100"></RowDefinition>
+                </Grid.RowDefinitions>
+                <button:SfButton x:Name="btnGelir"   FontSize="25" CornerRadius="5"
+                                  Grid.Column="0" Grid.Row="0" TextColor="ForestGreen" VerticalOptions="Fill"
+                                  HasShadow="True" BackgroundColor="White" ImageWidth="50" Clicked="btnGelir_Clicked"
+                                  Text="Gelir" ShowIcon="True"  ImageSource="GelirlerIcon.png">
+                    
+                </button:SfButton>
+                <button:SfButton x:Name="btnGider"   FontSize="22" CornerRadius="5"  x:FieldModifier="public"
+                                  Grid.Column="1" Grid.Row="0" VerticalOptions="Fill" TextColor="DarkRed" Clicked="btnGider_Clicked"
+                                   HasShadow="True" BackgroundColor="WhiteSmoke" ImageWidth="50"
+                                  Text="Gider" ShowIcon="True" ImageSource="GiderlerIcon.png">
+
+                </button:SfButton>
+                <button:SfButton x:Name="btnOzet"   FontSize="25" CornerRadius="5"
+                                  Grid.Column="0" Grid.Row="1"  TextColor="DodgerBlue" VerticalOptions="Fill"
+                                  HasShadow="True" BackgroundColor="WhiteSmoke" ImageWidth="50" Clicked="btnOzet_Clicked"
+                                  Text="Özet" ShowIcon="True"  ImageSource="ozetIcon.png">
+
+                </button:SfButton>
+                <button:SfButton x:Name="btnKategori"   FontSize="22" CornerRadius="5" 
+                                  Grid.Column="1" Grid.Row="1" VerticalOptions="Fill" TextColor="OrangeRed" Clicked="btnKategori_Clicked"
+                                   HasShadow="True" BackgroundColor="WhiteSmoke" ImageWidth="50"
+                                  Text="Kategori" ShowIcon="True" ImageSource="KategoriIcon.png">
+
+                </button:SfButton>
+                <button:SfButton x:Name="btnRapor"   FontSize="25" CornerRadius="5"
+                                  Grid.Column="0" Grid.Row="2" TextColor="ForestGreen" VerticalOptions="Fill"
+                                  HasShadow="True" BackgroundColor="White" ImageWidth="50" Clicked="btnRapor_Clicked"
+                                  Text="Rapor" ShowIcon="True"  ImageSource="chartIcon.png">
+
+                </button:SfButton>
+            </Grid>
+            <ActivityIndicator x:Name="loadingIn" IsRunning="False" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

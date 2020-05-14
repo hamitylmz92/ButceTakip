@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:magicGradients="clr-namespace:MagicGradients;assembly=MagicGradients" 
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             mc:Ignorable="d"
+             x:Class="ButceTakip.Views.MasterPage" Title="Masterpg" BackgroundColor="White">
+    <StackLayout >
+
+        <Grid>
+            <Grid.RowDefinitions >
+                <RowDefinition Height="180"/>
+                <RowDefinition Height="500"/>
+            </Grid.RowDefinitions>
+            <Frame   WidthRequest="150" Padding="0,0,0,0" HasShadow="True" HeightRequest="180" Grid.Row="0">
+                <Grid>
+                    
+                    <magicGradients:GradientView VerticalOptions="FillAndExpand" Grid.Row="0" >
+                        <magicGradients:GradientView.GradientSource>
+                            <magicGradients:CssGradientSource>
+                                <x:String>
+                                    <![CDATA[
+                                     radial-gradient(circle at 53% 25%, rgba(203, 203, 203,0.04) 0%, rgba(203, 203, 203,0.04) 36%,transparent 36%, transparent 100%),radial-gradient(circle at 48% 27%, rgba(22, 22, 22,0.04) 0%, rgba(22, 22, 22,0.04) 45%,transparent 45%, transparent 100%),radial-gradient(circle at 65% 50%, rgba(219, 219, 219,0.04) 0%, rgba(219, 219, 219,0.04) 61%,transparent 61%, transparent 100%),radial-gradient(circle at 78% 82%, rgba(229, 229, 229,0.04) 0%, rgba(229, 229, 229,0.04) 26%,transparent 26%, transparent 100%),radial-gradient(circle at 99% 75%, rgba(96, 96, 96,0.04) 0%, rgba(96, 96, 96,0.04) 31%,transparent 31%, transparent 100%),radial-gradient(circle at 17% 28%, rgba(188, 188, 188,0.04) 0%, rgba(188, 188, 188,0.04) 15%,transparent 15%, transparent 100%),radial-gradient(circle at 19% 19%, rgba(25, 25, 25,0.04) 0%, rgba(25, 25, 25,0.04) 68%,transparent 68%, transparent 100%),radial-gradient(circle at 35% 23%, rgba(31, 31, 31,0.04) 0%, rgba(31, 31, 31,0.04) 18%,transparent 18%, transparent 100%),linear-gradient(90deg, rgb(138, 193, 238),rgb(20, 21, 171))
+                                    ]]>
+                                </x:String>
+                            </magicGradients:CssGradientSource>
+                        </magicGradients:GradientView.GradientSource>
+                    </magicGradients:GradientView>
+                    <Label Text=" Bütçe Takibi v1.0"  HorizontalOptions="Center" TextColor="White" VerticalOptions="Center" Grid.Row="0" BackgroundColor="Transparent" FontSize="30" ></Label>
+                </Grid>
+
+            </Frame>
+            <!--<magicGradients:GradientView VerticalOptions="FillAndExpand" Grid.RowSpan="2" Grid.Row="1" >
+                <magicGradients:GradientView.GradientSource>
+                    <magicGradients:CssGradientSource>
+                        <x:String>
+                            <![CDATA[
+                           linear-gradient(45deg, rgba(14, 14, 14,0.03) 0%, rgba(14, 14, 14,0.03) 38%,rgba(250, 250, 250,0.03) 38%, rgba(250, 250, 250,0.03) 45%,rgba(113, 113, 113,0.03) 45%, rgba(113, 113, 113,0.03) 100%),linear-gradient(135deg, rgba(148, 148, 148,0.03) 0%, rgba(148, 148, 148,0.03) 36%,rgba(219, 219, 219,0.03) 36%, rgba(219, 219, 219,0.03) 63%,rgba(62, 62, 62,0.03) 63%, rgba(62, 62, 62,0.03) 100%),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255))   
+                            ]]>
+                        </x:String>
+                    </magicGradients:CssGradientSource>
+                </magicGradients:GradientView.GradientSource>
+            </magicGradients:GradientView>-->
+            <syncfusion:SfListView x:Name="lstMenu" VerticalOptions="Fill" x:FieldModifier="public"   Grid.Row="1"  BackgroundColor="Transparent"
+            ItemSize="50" ItemSpacing="3,5,3,0" >
+                <syncfusion:SfListView.ItemTemplate >
+                    <DataTemplate>
+
+                        <Frame x:Name="frame" HasShadow="True" CornerRadius="20" Padding="5" Margin="2" BackgroundColor="WhiteSmoke">
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="70"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image Source="{Binding Resim}" Grid.Column="0" Grid.Row="0" HorizontalOptions="Start"/>
+                                <Label Text="{Binding MenuAdi}" Grid.Column="1" Grid.Row="0"  FontSize="Large" HorizontalOptions="Start" VerticalOptions="Center" />
+                                <Image Source="yonlendir.png" Grid.Column="2" Grid.Row="0" HorizontalOptions="End" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </syncfusion:SfListView.ItemTemplate>
+            </syncfusion:SfListView>
+            
+        </Grid>
+     
+        
+       
+    </StackLayout>
+</ContentPage>

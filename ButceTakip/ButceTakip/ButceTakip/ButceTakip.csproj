@@ -1,0 +1,77 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Views\MasterPage.xaml.cs~RF29a8f0da.TMP" />
+    <None Remove="Views\Raporlar.xaml~RF7f0424d.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MagicGradients" Version="1.1.0" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.1.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.Cards" Version="18.1.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="18.1.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.DataGridExport" Version="18.1.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfBusyIndicator" Version="18.1.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="18.1.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfComboBox" Version="18.1.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfDataGrid" Version="18.1.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="18.1.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfMaskedEdit" Version="18.1.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfNumericTextBox" Version="18.1.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="18.1.0.42" />
+    <PackageReference Include="Xam.Plugins.Messaging" Version="5.2.0" />
+    <PackageReference Include="Xam.Plugins.Notifier" Version="3.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\Default.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\GelirGider.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Gelirler.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Giderler.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Home.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Kategoriler.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MasterPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Raporlar.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TestReport.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\YeniGelir.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\YeniGider.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\YeniKategori.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

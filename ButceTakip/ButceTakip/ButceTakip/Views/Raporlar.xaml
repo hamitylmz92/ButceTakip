@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:datagrid="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:tabview="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms" 
+             xmlns:local="clr-namespace:ButceTakip.Views" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             mc:Ignorable="d"
+             x:Class="ButceTakip.Views.Raporlar" Title="Rapor">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:DatetimeToStringConverter x:Key="cnvDateTimeConverter"></local:DatetimeToStringConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+          
+        <tabview:SfTabView  TabHeight="50" DisplayMode="Text"   TabHeaderBackgroundColor="#eaeaea"  >
+                <tabview:SfTabView.SelectionIndicatorSettings>
+                    <tabview:SelectionIndicatorSettings   StrokeThickness="3"></tabview:SelectionIndicatorSettings>
+                </tabview:SfTabView.SelectionIndicatorSettings>
+                <tabview:SfTabItem Title="Gelirler"  ImageSource="add.png"  >
+                    <tabview:SfTabItem.Content>
+                  
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            
+                          
+                            <buttons:SfButton x:Name="btnGelirPdf" Grid.Column="1" ImageAlignment="Start" 
+                                              BackgroundColor="WhiteSmoke" Text="Pdf" TextColor="DarkRed"
+                                              Margin="5,5,5,5" 
+                                              ImageSource="pdf.png" ShadowColor="Black" HasShadow="True"
+                                              ShowIcon="True"  Grid.Row="0" WidthRequest="80" HorizontalOptions="Start"
+                                              Clicked ="ExportPdf_Clicked"  />
+                            <buttons:SfButton x:Name="btnGelirExcel" Grid.Column="1" ImageAlignment="Left" 
+                                              BackgroundColor="WhiteSmoke" 
+                                              Margin="5,5,5,5" Text="Excel" TextColor="Green"
+                                              BorderColor="Gray"  ShadowColor="Black" HasShadow="True"
+                                              ImageSource="excel.png"
+                                              ShowIcon="True"  Grid.Row="0" WidthRequest="85" HorizontalOptions="End"
+                                              Clicked ="ExportExcel_Clicked"  />
+                            <datagrid:SfDataGrid x:Name="dtGelir"  Grid.Row="1" Grid.ColumnSpan="2" AutoGenerateColumns="True" ColumnSizer="Star" >
+                                    <datagrid:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns" >
+                                        <datagrid:GridTextColumn HeaderText="Id" IsHidden="True" MappingName="Id"  />
+                                        <datagrid:GridTextColumn HeaderText="GelirGiderTuruId" IsHidden="True" MappingName="GelirGiderTuruId" />
+                                        <datagrid:GridTextColumn HeaderText="Açıklama" MappingName="Aciklama" TextAlignment="Center" />
+                                        <datagrid:GridNumericColumn MappingName="Deger" HeaderText="Gelir" Format="C" TextAlignment="Center"/>
+                                        <datagrid:GridDateTimeColumn MappingName="KayitTarihi" Format="dd-MM-yyyy" HeaderText="Kayıt Tarihi" TextAlignment="Center"/>
+                                        <datagrid:GridTextColumn HeaderText="KullaniciId" IsHidden="True" MappingName="KullaniciId" />
+                                    </datagrid:SfDataGrid.Columns>
+                            </datagrid:SfDataGrid>
+                        </Grid>
+                        
+                       
+             
+                   
+                    </tabview:SfTabItem.Content>
+                </tabview:SfTabItem>
+
+                <tabview:SfTabItem Title="Giderler" ImageSource="business.png">
+                    <tabview:SfTabItem.Content>
+              
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+
+                            <buttons:SfButton x:Name="btnGiderPdf" Grid.Column="1" ImageAlignment="Start" 
+                                              BackgroundColor="WhiteSmoke" Text="Pdf" TextColor="DarkRed"
+                                              Margin="5,5,5,5" 
+                                              ImageSource="pdf.png" ShadowColor="Black" HasShadow="True"
+                                              ShowIcon="True"  Grid.Row="0" WidthRequest="80" HorizontalOptions="Start"
+                                              Clicked ="btnGiderPdf_Clicked"  />
+                            <buttons:SfButton x:Name="btnGiderExcel" Grid.Column="1" ImageAlignment="Left" 
+                                              BackgroundColor="WhiteSmoke" 
+                                              Margin="5,5,5,5" Text="Excel" TextColor="Green"
+                                              BorderColor="Gray"  ShadowColor="Black" HasShadow="True"
+                                              ImageSource="excel.png"
+                                              ShowIcon="True"  Grid.Row="0" WidthRequest="85" HorizontalOptions="End"
+                                              Clicked ="btnGiderExcel_Clicked"  />
+                            
+                            <datagrid:SfDataGrid x:Name="dtGider"  Grid.Row="1" Grid.ColumnSpan="2" AutoGenerateColumns="True" ColumnSizer="Star"  >
+                                <datagrid:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns" >
+                                    <datagrid:GridTextColumn HeaderText="Id" IsHidden="True" MappingName="Id"  />
+                                    <datagrid:GridTextColumn HeaderText="GelirGiderTuruId" IsHidden="True" MappingName="GelirGiderTuruId" />
+                                    <datagrid:GridTextColumn HeaderText="Açıklama" MappingName="Aciklama" TextAlignment="Center" />
+                                    <datagrid:GridNumericColumn MappingName="Deger" HeaderText="Gider" Format="C" TextAlignment="Center"/>
+                                    <datagrid:GridDateTimeColumn MappingName="KayitTarihi" Format="dd-MM-yyyy" HeaderText="Kayıt Tarihi" TextAlignment="Center"/>
+                                    <datagrid:GridTextColumn HeaderText="KullaniciId" IsHidden="True" MappingName="KullaniciId" />
+                                </datagrid:SfDataGrid.Columns>
+                            </datagrid:SfDataGrid>
+                        </Grid>
+
+
+              
+                </tabview:SfTabItem.Content>
+                </tabview:SfTabItem>
+
+                <!--<tabview:SfTabItem Title="Kategorilere Göre" ImageSource="business.png">
+                    <tabview:SfTabItem.Content>
+                        <Label Text="S"></Label>
+                    </tabview:SfTabItem.Content>
+                </tabview:SfTabItem>-->
+
+            </tabview:SfTabView>
+
+        
+    </ContentPage.Content>
+</ContentPage>

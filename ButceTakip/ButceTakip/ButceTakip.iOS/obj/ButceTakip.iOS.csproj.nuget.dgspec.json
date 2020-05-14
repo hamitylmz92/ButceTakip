@@ -1,0 +1,274 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\ButceTakip\\ButceTakip\\ButceTakip.iOS\\ButceTakip.iOS.csproj": {}
+  },
+  "projects": {
+    "D:\\ButceTakip\\ButceTakip\\ButceTakip.iOS\\ButceTakip.iOS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\ButceTakip\\ButceTakip\\ButceTakip.iOS\\ButceTakip.iOS.csproj",
+        "projectName": "ButceTakip.iOS",
+        "projectPath": "D:\\ButceTakip\\ButceTakip\\ButceTakip.iOS\\ButceTakip.iOS.csproj",
+        "packagesPath": "C:\\Users\\ayilmaz\\.nuget\\packages\\",
+        "outputPath": "D:\\ButceTakip\\ButceTakip\\ButceTakip.iOS\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ayilmaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "xamarinios10"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files (x86)\\Syncfusion\\Essential Studio\\Xamarin\\18.1.0.42\\Xamarin\\nuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "xamarinios10": {
+            "projectReferences": {
+              "D:\\ButceTakip\\ButceTakip\\ButceTakip\\ButceTakip.csproj": {
+                "projectPath": "D:\\ButceTakip\\ButceTakip\\ButceTakip\\ButceTakip.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "xamarinios10": {
+          "dependencies": {
+            "MagicGradients": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Syncfusion.Xamarin.Buttons": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.Cards": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.Core": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.DataGridExport": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.SfBusyIndicator": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.SfChart": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.SfComboBox": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.SfDataGrid": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.SfListView": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.SfMaskedEdit": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.SfNumericTextBox": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.SfTabView": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Xam.Plugins.Messaging": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Xam.Plugins.Notifier": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.3.1, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[4.4.0.991265, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.6.292, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\ButceTakip\\ButceTakip\\ButceTakip\\ButceTakip.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\ButceTakip\\ButceTakip\\ButceTakip\\ButceTakip.csproj",
+        "projectName": "ButceTakip",
+        "projectPath": "D:\\ButceTakip\\ButceTakip\\ButceTakip\\ButceTakip.csproj",
+        "packagesPath": "C:\\Users\\ayilmaz\\.nuget\\packages\\",
+        "outputPath": "D:\\ButceTakip\\ButceTakip\\ButceTakip\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ayilmaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files (x86)\\Syncfusion\\Essential Studio\\Xamarin\\18.1.0.42\\Xamarin\\nuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "MagicGradients": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Syncfusion.Xamarin.Buttons": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.Cards": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.Core": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.DataGridExport": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.SfBusyIndicator": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.SfChart": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.SfComboBox": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.SfDataGrid": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.SfListView": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.SfMaskedEdit": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.SfNumericTextBox": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Syncfusion.Xamarin.SfTabView": {
+              "target": "Package",
+              "version": "[18.1.0.42, )"
+            },
+            "Xam.Plugins.Messaging": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Xam.Plugins.Notifier": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.3.1, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[4.4.0.991265, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.6.292, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

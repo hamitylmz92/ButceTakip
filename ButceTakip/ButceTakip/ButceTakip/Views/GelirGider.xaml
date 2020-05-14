@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:tabview="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms" 
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" 
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" 
+             xmlns:magicGradients="clr-namespace:MagicGradients;assembly=MagicGradients" xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             mc:Ignorable="d"
+             x:Class="ButceTakip.Views.GelirGider">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="barBtnYeni" Text="Yeni" Order="Primary" Priority="0"  IconImageSource="add.png" Clicked="barBtnYeni_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <tabview:SfTabView BackgroundColor="Transparent" TabHeight="40" DisplayMode="Image"  TabHeaderBackgroundColor="#eaeaea" HeightRequest="220">
+            <tabview:SfTabView.SelectionIndicatorSettings>
+                <tabview:SelectionIndicatorSettings   StrokeThickness="3"></tabview:SelectionIndicatorSettings>
+            </tabview:SfTabView.SelectionIndicatorSettings>
+            <tabview:SfTabItem Title="Özet"  ImageSource="symbol.png" >
+                <tabview:SfTabItem.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <magicGradients:GradientView VerticalOptions="FillAndExpand" Grid.Row="0" Grid.RowSpan="4" Grid.ColumnSpan="2" >
+                            <magicGradients:GradientView.GradientSource>
+                                <magicGradients:CssGradientSource>
+                                    <x:String>
+                                        <![CDATA[
+                                 linear-gradient(0deg, rgba(187, 187, 187,0.04) 0%, rgba(187, 187, 187,0.04) 65%,rgba(49, 49, 49,0.04) 65%, rgba(49, 49, 49,0.04) 100%),linear-gradient(135deg, rgba(78, 78, 78,0.04) 0%, rgba(78, 78, 78,0.04) 26%,rgba(247, 247, 247,0.04) 26%, rgba(247, 247, 247,0.04) 100%),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255))
+                                    ]]>
+                                    </x:String>
+                                </magicGradients:CssGradientSource>
+                            </magicGradients:GradientView.GradientSource>
+                        </magicGradients:GradientView>
+
+                        <inputLayout:SfTextInputLayout  
+                               OutlineCornerRadius="5"  HelperText="Başlangıç Tarihi Seçiniz" FocusedColor="SkyBlue" 
+                               InputViewPadding="1"  ContainerType="Filled" Margin="20,4,20,5"
+                               Grid.Column="0" Grid.Row="0" >
+                            <inputLayout:SfTextInputLayout.TrailingView>
+                                <Label
+                                    Text="&#x1F5D3;">
+                                </Label>
+                            </inputLayout:SfTextInputLayout.TrailingView>
+                            <DatePicker x:Name="dtIlk"  FontSize="15" TextColor="DimGray"/>
+                        </inputLayout:SfTextInputLayout>
+                        <inputLayout:SfTextInputLayout  
+                                FocusedColor="SkyBlue" ContainerType="Filled" Margin="20,4,20,5"
+                               InputViewPadding="1" HorizontalOptions="Center" 
+                                HelperText="Bitiş Tarihi Seçiniz" 
+                               Grid.Column="1" Grid.Row="0" >
+                            <inputLayout:SfTextInputLayout.TrailingView>
+                                <Label
+                                    Text="&#x1F5D3;">
+                                </Label>
+                            </inputLayout:SfTextInputLayout.TrailingView>
+                            <DatePicker x:Name="dtSon"   FontSize="15"  TextColor="DimGray" />
+                        </inputLayout:SfTextInputLayout>
+
+                        <Label FontSize="Large" Grid.Row="1" Grid.ColumnSpan="2" Text="Tolam" Margin="0,10,0,10" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ></Label>
+                        <Label x:Name="lblToplamDeger" Grid.Row="2" Grid.ColumnSpan="2" FontSize="Title" TextColor="DarkRed"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ></Label>
+
+
+                    </Grid>
+                </tabview:SfTabItem.Content>
+            </tabview:SfTabItem>
+            <tabview:SfTabItem Title="Grafik" ImageSource="business.png">
+                <tabview:SfTabItem.Content>
+                    <chart:SfChart x:Name="chartGelirGider" ChartPadding="0,0,0,0">
+
+                        <!--<chart:SfChart.Title >
+                        <chart:ChartTitle Text="Test" TextColor="Black" BackgroundColor="Yellow" FontSize="5" BorderColor="Black" BorderWidth="1"/>
+                    </chart:SfChart.Title>-->
+
+                        <chart:SfChart.Legend>
+                            <chart:ChartLegend IsIconVisible="True" DockPosition="Left">
+                                <!--<chart:ChartLegend.Title >
+
+                                <chart:ChartTitle Text="Giderler" TextColor="Maroon" TextAlignment="Center" 
+							  BackgroundColor="Silver" BorderWidth="3" BorderColor="Blue" Font="Bold,5">
+
+                                </chart:ChartTitle>
+
+                            </chart:ChartLegend.Title>-->
+                            </chart:ChartLegend>
+                        </chart:SfChart.Legend>
+
+                        <chart:SfChart.PrimaryAxis>
+                            <chart:CategoryAxis>
+                                <chart:CategoryAxis.Title>
+                                    <chart:ChartAxisTitle Text="Aciklama"/>
+                                </chart:CategoryAxis.Title>
+                            </chart:CategoryAxis>
+                        </chart:SfChart.PrimaryAxis>
+
+                        <chart:SfChart.SecondaryAxis>
+                            <chart:NumericalAxis>
+                                <chart:NumericalAxis.Title>
+                                    <chart:ChartAxisTitle Text="Deger"/>
+                                </chart:NumericalAxis.Title>
+                            </chart:NumericalAxis>
+                        </chart:SfChart.SecondaryAxis>
+
+                        <chart:SfChart.ChartBehaviors>
+
+                            <chart:ChartZoomPanBehavior EnableSelectionZooming="True" EnableDoubleTap="True" EnableZooming="True" ZoomMode="X"/>
+
+                        </chart:SfChart.ChartBehaviors>
+
+                        <chart:PieSeries x:Name="psGelirGider" EnableDataPointSelection="True" SelectedDataPointColor="Red"  
+                                     ItemsSource="{Binding Data}" XBindingPath="Aciklama" DataMarkerPosition="Outside"  
+                                     YBindingPath="Deger" LegendIcon="Circle">
+                            <chart:PieSeries.DataMarker>
+                                <chart:ChartDataMarker ShowLabel="True" LabelContent="YValue" MarkerType="Ellipse"  >
+                                    <chart:ChartDataMarker.LabelStyle >
+                                        <chart:DataMarkerLabelStyle TextColor="Black"
+										BorderColor="Black"  
+										BorderThickness="1"
+										BackgroundColor="White"
+										Angle="0"
+                                                    LabelFormat="###,###.### ₺"
+										Margin="5"
+										Font="Bold,5"/>
+                                    </chart:ChartDataMarker.LabelStyle>
+
+                                </chart:ChartDataMarker>
+
+                            </chart:PieSeries.DataMarker>
+
+                        </chart:PieSeries>
+
+
+                    </chart:SfChart>
+
+
+                </tabview:SfTabItem.Content>
+            </tabview:SfTabItem>
+
+        </tabview:SfTabView>
+        
+        <syncfusion:SfListView x:Name="lstGelirGider"
+            ItemSize="60" ItemSpacing="3,2,3,0" SelectionChanged="lstGelirGider_SelectionChanged" SelectionChangedCommandParameter="{Binding Id}">
+            <syncfusion:SfListView.ItemTemplate>
+                <DataTemplate>
+
+                    <Frame x:Name="frame" HasShadow="True" Padding="2" Margin="2" BackgroundColor="WhiteSmoke">
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="70"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="22"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Label Text="{Binding Aciklama}" FontSize="Medium" Padding="10,0,0,0" Grid.Column="0" Grid.Row="0" />
+                            <!--<Label Text="{Binding StringFormat='The {{0:MMMM}} specifier produces {0:MMMM}'}"  Grid.Column="0" Grid.Row="1" />-->
+                            <Label Text="{Binding Deger ,StringFormat='{0:c}'}"  FontSize="Small" Padding="10,0,0,0"  Grid.Column="0" Grid.Row="1" />
+                            <ImageButton x:Name="btnSil" 
+                                         Grid.Column="2"
+                                         Grid.RowSpan="2"
+                                         Margin="9,9,9,9" 
+                                         Padding="0,0,0,0"
+                                         BackgroundColor="Transparent"
+                                         Clicked="btnSil_Clicked" Source="delete.png" CommandParameter="{Binding .}">
+
+                            </ImageButton>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </syncfusion:SfListView.ItemTemplate>
+        </syncfusion:SfListView>
+    </StackLayout>
+</ContentPage>

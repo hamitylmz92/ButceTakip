@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             mc:Ignorable="d"
+             x:Class="ButceTakip.Views.Gelirler" Title="Gelirler">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="barBtnYeni" Text="Yeni" Order="Primary" Priority="0"  IconImageSource="add.png" Clicked="barBtnYeni_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <syncfusion:SfListView x:Name="lstGelirler"
+            ItemSize="70" ItemSpacing="3,5,3,0" SelectionChanged="lstGelirler_SelectionChanged" SelectionChangedCommandParameter="{Binding Id}">
+            <syncfusion:SfListView.ItemTemplate>
+                <DataTemplate>
+
+                    <Frame x:Name="frame" HasShadow="True" Padding="5" Margin="2" BackgroundColor="WhiteSmoke">
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="70"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="22"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Text="{Binding Aciklama}" FontSize="Medium" Padding="10,0,0,0" Grid.Column="0" Grid.Row="0" />
+                            <!--<Label Text="{Binding StringFormat='The {{0:MMMM}} specifier produces {0:MMMM}'}"  Grid.Column="0" Grid.Row="1" />-->
+                            <Label Text="{Binding Deger ,StringFormat='{0:c}'}"  FontSize="Small" Padding="10,0,0,0"  Grid.Column="0" Grid.Row="1" />
+                            <ImageButton x:Name="btnSil" 
+                                         Grid.Column="2"
+                                         Grid.RowSpan="2"
+                                         Margin="9,9,9,9" 
+                                         Padding="0,0,0,0"
+                                         BackgroundColor="Transparent"
+                                         Clicked="btnSil_Clicked" Source="delete.png" CommandParameter="{Binding .}">
+
+                            </ImageButton>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </syncfusion:SfListView.ItemTemplate>
+        </syncfusion:SfListView>
+    </StackLayout>
+</ContentPage>

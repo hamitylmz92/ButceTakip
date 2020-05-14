@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" 
+             mc:Ignorable="d"
+             x:Class="ButceTakip.Views.Kategoriler" Title="Kategoriler">
+    <!--<ContentPage.Content>
+    </ContentPage.Content>-->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="barBtnYeni" Text="Yeni" Order="Primary" Priority="0"  IconImageSource="add.png" Clicked="barBtnYeni_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <SearchBar x:Name="filterText" HeightRequest="40"
+           Placeholder="Kategori adına göre arayınız"
+           TextChanged="filterText_TextChanged" Grid.Row="0"/>
+        <syncfusion:SfListView x:Name="lstKategori" AllowGroupExpandCollapse="True"
+            ItemSize="60" ItemSpacing="3,3,3,3" 
+                               SelectionChanged="lstKategori_SelectionChanged" 
+                               SelectionChangedCommandParameter="{Binding Id}"
+                               IsStickyGroupHeader="True">
+            <syncfusion:SfListView.ItemTemplate >
+                <DataTemplate>
+
+                    <Frame x:Name="frame" HasShadow="True" Padding="4" Margin="2" BackgroundColor="WhiteSmoke">
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="70"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="22"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Text="{Binding KategoriAdi}" FontSize="Small"  TextColor="Black" Padding="10,0,0,0" Grid.Column="0" Grid.Row="0" />
+                            <Label Text="{Binding Aciklama}" FontSize="Small" FontFamily="sans-serif-light" Padding="10,0,0,0" Grid.Column="0" Grid.Row="1" />
+                            <Label Text="{Binding TipAciklama}" TextColor="{Binding Color}" HorizontalOptions="End"  FontSize="Small" Padding="0,15,0,0"  Grid.Column="1" Grid.RowSpan="2" />
+                            <ImageButton x:Name="btnSil" 
+                                         Grid.Column="2"
+                                         Grid.RowSpan="2" HorizontalOptions="End"
+                                         Margin="9,9,9,9" 
+                                         Padding="0,0,0,0"
+                                         BackgroundColor="Transparent"
+                                         Clicked="btnSil_Clicked" Source="delete.png" CommandParameter="{Binding .}">
+                                
+                            </ImageButton>
+                           
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </syncfusion:SfListView.ItemTemplate>
+        </syncfusion:SfListView>
+    </StackLayout>
+  
+</ContentPage>
